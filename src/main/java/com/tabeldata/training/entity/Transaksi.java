@@ -17,4 +17,5 @@ public class Transaksi {
     private Anggota anggota;
     private String petugas;
     private Timestamp createdDate;
+    private boolean kembali;
 }
