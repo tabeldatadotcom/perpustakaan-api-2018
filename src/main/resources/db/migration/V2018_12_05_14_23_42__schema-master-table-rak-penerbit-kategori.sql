@@ -1,19 +1,19 @@
 create table rak
 (
-  id       varchar(64)  not null primary key,
-  nama     varchar(150) not null,
-  location int          not null default 0
-) engine = InnoDB;
+  id       character varying(64)  not null primary key,
+  nama     character varying(150) not null,
+  location int                    not null default 0
+);
 
 create table kategori
 (
-  id   varchar(64)  not null primary key,
-  nama varchar(100) not null
-) engine = InnoDB;
+  id   character varying(64)  not null primary key,
+  nama character varying(100) not null
+);
 
 create table penerbit
 (
-  id     varchar(64)  not null primary key,
-  nama   varchar(100) not null,
-  alamat varchar(255)
-) engine = InnoDB;
+  id     character varying(64)  not null primary key,
+  nama   character varying(100) not null,
+  alamat character varying(255)
+);
