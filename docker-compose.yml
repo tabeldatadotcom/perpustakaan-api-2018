@@ -1,0 +1,14 @@
+version: "3.6"
+services:
+  db-psql:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_PASSWORD=perpustakaan
+      - POSTGRES_USER=perpustakaan
+      - POSTGRES_DB=perpustakaan
+    ports:
+      - "5432:5432"
+    volumes:
+      - datadir:/var/lib/postgresql/data
+volumes:
+  datadir:
