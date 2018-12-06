@@ -38,7 +38,7 @@ public class BukuApi {
     }
 
     @PutMapping("/save")
-    public ResponseEntity<Buku> update(Buku buku) {
+    public ResponseEntity<Buku> update(@RequestBody Buku buku) {
         buku = service.save(buku);
         return ResponseEntity.ok(buku);
     }
