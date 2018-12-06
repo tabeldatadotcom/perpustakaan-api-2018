@@ -2,6 +2,7 @@ package com.tabeldata.training.api;
 
 import com.tabeldata.training.entity.Buku;
 import com.tabeldata.training.service.BukuService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @RequestMapping("/api/buku")
 public class BukuApi {
 
+    @Autowired
     public BukuService service;
 
     @PostMapping("/save")
