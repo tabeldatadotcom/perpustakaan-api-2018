@@ -3,6 +3,7 @@ package com.tabeldata.training.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "buku")
+@ToString(exclude = "daftarKategori")
 public class Buku {
 
     @Id
