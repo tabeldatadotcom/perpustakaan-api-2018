@@ -10,4 +10,8 @@ public interface BukuRepository extends PagingAndSortingRepository<Buku, String>
     @Modifying
     @Query("update from Buku set stock = stock - ?2 where id = ?1")
     int updateStockPeminjaman(String id, Integer stok);
+
+    @Query("update from Buku set stock = stock + ?2 where id = ?1")
+    @Modifying
+    int updateStockPengembalian(String id, Integer stok);
 }
