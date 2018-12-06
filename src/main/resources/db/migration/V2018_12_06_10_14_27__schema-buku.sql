@@ -4,7 +4,7 @@ create table buku
   title           character varying(100) not null,
   isbn            character varying(60)  not null unique,
   qty             integer                not null default 0,
-  tanggal_publish date                   not null default now(),
+  tanggal_publish date                   not null,
   penerbit_id     character varying(64)  not null,
   rak_id          character varying(64)
 );
