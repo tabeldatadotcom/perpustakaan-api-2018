@@ -1,5 +1,6 @@
 package com.tabeldata.training.controller;
 
+import com.tabeldata.training.entity.Rak;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.util.JRLoader;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,9 @@ public class ReportController {
         params.put("nama", "Dimas Maryanto");
         params.put("status", false);
         params.put("saldo", new BigDecimal(2000000));
+
+        Rak rakBuku = new Rak("001", "Rak buku pemograman", 5);
+        params.put("rakBuku", rakBuku);
 
         JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JREmptyDataSource());

@@ -5,6 +5,7 @@
 	<parameter name="nama" class="java.lang.String"/>
 	<parameter name="status" class="java.lang.Boolean"/>
 	<parameter name="saldo" class="java.math.BigDecimal"/>
+	<parameter name="rakBuku" class="com.tabeldata.training.entity.Rak"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -53,6 +54,14 @@
 				<reportElement x="100" y="60" width="140" height="30" uuid="bb83c1fe-62d8-468c-87f6-60c811ab01fb"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{saldo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="86cbcb8b-e5a4-482d-98dc-034a23b9511a"/>
+				<textFieldExpression><![CDATA[$P{rakBuku}.getId()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="30" width="100" height="30" uuid="c6e8a2f5-dee5-45bf-a6cf-f913048b62e0"/>
+				<textFieldExpression><![CDATA[$P{rakBuku}.getNama()]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
