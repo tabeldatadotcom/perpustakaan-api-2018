@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,6 +22,10 @@ public class ReportController {
     public void exampleReport(HttpServletResponse response) throws JRException, IOException {
         InputStream jasperStream = this.getClass().getResourceAsStream("/jasper/report_contoh.jasper");
         Map<String, Object> params = new HashMap<>();
+        params.put("nama", "Dimas Maryanto");
+        params.put("status", false);
+        params.put("saldo", new BigDecimal(2000000));
+
         JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JREmptyDataSource());
         response.setContentType("application/x-pdf");
