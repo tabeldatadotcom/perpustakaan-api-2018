@@ -2,6 +2,7 @@ package com.tabeldata.training.controller;
 
 import com.tabeldata.training.entity.Rak;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.util.JRLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -30,8 +33,10 @@ public class ReportController {
         Rak rakBuku = new Rak("001", "Rak buku pemograman", 5);
         params.put("rakBuku", rakBuku);
 
+        List<Rak> listRak = Arrays.asList(rakBuku, rakBuku, rakBuku);
+
         JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JREmptyDataSource());
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JRBeanCollectionDataSource(listRak));
         response.setContentType("application/x-pdf");
         response.setHeader("Content-disposition", "inline; filename=example.pdf");
 

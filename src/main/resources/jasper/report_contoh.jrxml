@@ -9,6 +9,12 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[nama]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -67,4 +73,44 @@
 			</textField>
 		</band>
 	</pageHeader>
+	<columnHeader>
+		<band height="30">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="95b57678-0f17-4d99-bce1-b06c5d01cc15">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dab78349-a967-4dc1-a2c7-ebf9da0cf698"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Kode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="280" height="30" uuid="f6b14d4d-d058-4488-b4a0-d7a49c810fbb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="840d0ab3-da3c-479d-822d-b720b3b1270f"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[nama]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="0f421508-4d3a-4b47-b6ba-e1f76e4fe851">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dab78349-a967-4dc1-a2c7-ebf9da0cf698"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="280" height="30" uuid="84cbc750-7156-4556-a870-3002bd12d818">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="840d0ab3-da3c-479d-822d-b720b3b1270f"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
 </jasperReport>
