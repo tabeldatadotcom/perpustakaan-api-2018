@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>PT. Tabeldata Informatika</title>
+</head>
+<body>
+<form method="POST" action="/proses-login" th:method="POST" th:action="@{/proses-login}">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" required/>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="passwd" required/>
+    </div>
+    <div>
+        <button type="submit">Kirim</button>
+        <button type="reset">Reset</button>
+    </div>
+</form>
+</body>
+</html>
