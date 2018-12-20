@@ -91,7 +91,7 @@
 				<textElement textAlignment="Center">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[nama]]></text>
+				<text><![CDATA[Nama Rak]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
